@@ -37,6 +37,7 @@ public:
     QLineEdit *Prot_Edit;
     QPushButton *ToConnect_Button;
     QPushButton *pushButton;
+    QPushButton *pushButton_2;
     QMenuBar *menuBar;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
@@ -72,10 +73,13 @@ public:
         pushButton = new QPushButton(centralWidget);
         pushButton->setObjectName(QStringLiteral("pushButton"));
         pushButton->setGeometry(QRect(400, 70, 93, 28));
+        pushButton_2 = new QPushButton(centralWidget);
+        pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
+        pushButton_2->setGeometry(QRect(460, 330, 75, 23));
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 648, 26));
+        menuBar->setGeometry(QRect(0, 0, 648, 23));
         MainWindow->setMenuBar(menuBar);
         mainToolBar = new QToolBar(MainWindow);
         mainToolBar->setObjectName(QStringLiteral("mainToolBar"));
@@ -98,6 +102,7 @@ public:
         Prot_Edit->setText(QApplication::translate("MainWindow", "3306", Q_NULLPTR));
         ToConnect_Button->setText(QApplication::translate("MainWindow", "\350\277\236\346\216\245", Q_NULLPTR));
         pushButton->setText(QApplication::translate("MainWindow", "\346\226\255\345\274\200", Q_NULLPTR));
+        pushButton_2->setText(QApplication::translate("MainWindow", "PushButton", Q_NULLPTR));
     } // retranslateUi
 
 };

@@ -1,6 +1,6 @@
 ﻿#include "mainwindow.h"
 #include "ui_mainwindow.h"
-
+#include "QFileDialog"
 #include<QSqlQuery>
 MainWindow::MainWindow(QWidget *parent) :
   QMainWindow(parent),
@@ -102,4 +102,33 @@ if(db.isOpen())
   {
     db.close();
   }
+}
+
+void MainWindow::on_pushButton_2_clicked()
+{
+
+  QString fileName = QFileDialog::getOpenFileName(this,
+						      tr("文件对话框！"),
+						      "C:/Users/Administrator/Desktop",
+						      tr("xmlfile(*xml)"));
+  QFile file(fileName);
+
+  //重新打开文件，对文件进行读操作
+   if(!file.open(QIODevice::ReadOnly|QIODevice::Text)){
+       qDebug()<<"文件打开失败";
+   }
+   //每次都去文件中的一行，然后输出读取到的字符串
+
+
+    QByteArray arry = file.readAll();
+
+   int size = arry.size();
+ui->OUT_Text->append(arry.data());
+   file.close();
+   return ;
+
+
+
+
+
 }
